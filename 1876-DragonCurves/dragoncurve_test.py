@@ -46,6 +46,9 @@ for i in xrange(30):
 def dragon_position(t):
     '''gives the dragon's position after t seconds'''
 
+    if t == 0:
+        return [0,0]
+
     dragon_path = path(t)
     pos = tab[dragon_path.pop()]
 
