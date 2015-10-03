@@ -32,4 +32,3 @@ for i in xrange(n):
     a, b = map(int, s.readline().strip().split(' '))
     for p in primes_between(a, b):
         sys.stdout.write(str(p) + '\n')
-    sys.stdout.write('\n')
