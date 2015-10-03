@@ -1,0 +1,19 @@
+## dragon curve
+## starting from project euler code
+
+
+
+def mp(A, v):
+    '''apply matrix A to vector v'''
+    return [A[0][0]*v[0] + A[0][1]*v[1],
+            A[1][0]*v[0] + A[1][1]*v[1]]
+def diff(v, w):
+    '''vector difference of v and w'''
+    return [v[0]-w[0], v[1]-w[1]]
+def add(v, w):
+    '''vector addition of v and w'''
+    return [v[0]+w[0], v[1]+w[1]]
+
+def rot90(a, b):
+    '''rotates point a 90 degrees about point b'''
+    return 
