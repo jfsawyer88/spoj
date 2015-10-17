@@ -1,0 +1,10 @@
+(** spoj **)
+(** Life, the Universe, and Everything **)
+
+let loop n =
+  if n <> "42" then
+    print_endline n;
+    loop (input_line stdin)
+;;
+
+loop (input_line stdin)

@@ -1,0 +1,30 @@
+(** spoj: Small Factorials **)
+
+#load "nums.cma"
+
+(* factorial function *)
+let rec factorial n =
+  let eq    = Big_int.eq_big_int   in   (**rename bigint equals**)
+  let zero  = Big_int.zero_big_int in   (**rename bigint zero**)
+  let one   = Big_int.unit_big_int in   (**rename bigint one**)
+  let bmult = Big_int.mult_big_int in   (**rename bigint mult**)
+  let bsub  = Big_int.sub_big_int  in   (**rename bigint sub**)
+  (**main part of function**)
+  if eq n zero then one                 (**base case, 0! = 1**)
+  else bmult n (factorial (bsub n one)) (**recursive step, n! = n*(n-1)!**)
+;;
+
+(* main function loop *)
+let rec  loop i =
+  if i > 0 then
+    begin
+      let n = input_line stdin in             (**read from stdin**)
+      let n = Big_int.big_int_of_string n in  (**convert to bigint**)
+      let f = factorial n in                  (**apply the factorial function**)
+      let f = Big_int.string_of_big_int f in  (**convert to string**)
+      print_endline f;                        (**print output**)
+      loop (i - 1)                            (**iterate until i=0**)
+    end
+;;
+
+loop (int_of_string (input_line stdin))
